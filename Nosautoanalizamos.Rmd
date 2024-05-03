@@ -1,0 +1,18 @@
+---
+title: "Nosautoanalizamos"
+author: "Lucía Martínez Valderas"
+date: "2024-05-03"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Importacion
+```{r}
+library(readr)
+arch <- read.csv("./data/NosAutoanalizamos2024 - Hoja1.tsv",skip=25, sep="\t")
+str(arch)
+```
+
