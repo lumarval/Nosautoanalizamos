@@ -13,6 +13,18 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 library(readr)
 arch <- read.csv("./data/NosAutoanalizamos2024 - Hoja1.tsv",skip=25, sep="\t")
-str(arch)
+#Elimino las ultimas lineas ya que son erroneas
+arch <- arch[arch$Id != "",]
+arch
+```
+```{r}
+#Función para averiguar la codificacion del archivo 
+codificacion<-guess_encoding("data/NosAutoanalizamos2024 - Hoja1.tsv")
+#unique nos da los valores unicos de una conjunto
+sex<-unique(arch$Sex)
+#Cambiamos el tipo de datos necesarios 
+VarFactor<-c("Id","Sex","NW.Hnd","Fold","Clap","Smoke")
+VarNum<-c("Age","Wr.Hnd","Pulse","Exer","Height","ALG","ANM","FP","DCS","MD","HSt","Hwork")
+VarFecha<-("FechaNac(DD-MM-YYY")
 ```
 
